@@ -1,6 +1,6 @@
 body {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: darkgray
+	background-color: rgb(244, 73, 73)
 }
 
 
@@ -8,13 +8,13 @@ body {
 	font-size: 4em;
 	padding: 0.1em;
 	border: 2px solid;
-	background-color: orchid;
+	background-color: rgb(158, 176, 155);
 	border-radius: 0.1em;
 }
 
 .section {
 	flex: 1;
-	background-color: steelblue;
+	background-color: rgb(219, 78, 177);
 	padding: 2em;
 	margin: 1em;
 	border-radius: 0.5em;
@@ -43,5 +43,5 @@ button {
 }
 
 .link:hover {
-	background-color: plum;
+	background-color: rgb(237, 97, 116);
 }

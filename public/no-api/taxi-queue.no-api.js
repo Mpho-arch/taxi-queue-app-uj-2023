@@ -1,35 +1,54 @@
 document.addEventListener('alpine:init', () => {
 
-	Alpine.data('TaxiQueue', () => {
+    Alpine.data('TaxiQueue', () => {
 
-		return {
-			version: 'no-api-1.0',
-			joinQueue() {
+        return {
+            version: 'no-api-1.0',
+            
+            init(){
+                this.passangerTotal;
+                this.taxisTotal;
+            },
 
-			},
-			leaveQueue() {
+            passangerTotal: 0,
+            taxisTotal: 0,
 
-			},
+            joinQueue() {
+                this.passangerTotal += 1;
+            },
 
-			joinTaxiQueue() {
 
-			},
+            leaveQueue() {
+                if(this.passangerTotal > 0){
+                    this.passangerTotal -= 1;
+                }
+                
+            },
 
-			queueLength() {
+            joinTaxiQueue() {
+                this.taxisTotal += 1
+            },
 
-			},
+            queueLength() {
+                return this.passangerTotal;
+            },
 
-			taxiQueueLength() {
+            taxiQueueLength() {
+                return this.taxisTotal;
+            },
 
-			},
+            taxiDepart() {
+                if(this.taxisTotal > 0 && this.passangerTotal >=12 ){
+                    
+                    this.taxisTotal -= 1;
+                    this.passangerTotal -= 12;
+                }
+            }
 
-			taxiDepart() {
+            
+        }
 
-			}
-		}
-
-	});
+    });
 
 });
-
 
